@@ -1,0 +1,10 @@
+flask
+flask-cors
+opencv-python-headless
+numpy
+Pillow
+facenet-pytorch
+torch
+python-dotenv
+scikit-learn
+mysql-connector-python
