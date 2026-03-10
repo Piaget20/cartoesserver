@@ -7,6 +7,8 @@ import torch
 from PIL import Image
 from facenet_pytorch import MTCNN, InceptionResnetV1
 from sklearn.metrics.pairwise import cosine_similarity
+import os
+
 
 app = Flask(__name__)
 CORS(app)
@@ -75,5 +77,8 @@ def comparar():
     sims = cosine_similarity([emb_novo], lista_conhecidos)[0]
     return jsonify({"max_sim": float(np.max(sims)), "index": int(np.argmax(sims))})
 
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    # O Render injeta a porta na variável de ambiente PORT
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
