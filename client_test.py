@@ -1,7 +1,7 @@
 import requests
 import numpy as np
 
-URL = "http://localhost:5000"
+URL = "https://cartoesserver.onrender.com/"
 
 # 1. Testar Extração
 print("--- Testando Extração ---")

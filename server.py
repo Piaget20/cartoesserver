@@ -79,6 +79,6 @@ def comparar():
 
 
 if __name__ == '__main__':
-    # O Render injeta a porta na variável de ambiente PORT
-    port = int(os.environ.get("PORT", 5000))
+    # O Render define a variável PORT. Se não existir, usa 5000 (local)
+    port = int(os.environ.get("PORT", 10000)) 
     app.run(host='0.0.0.0', port=port)
